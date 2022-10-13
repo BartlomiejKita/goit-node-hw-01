@@ -1,6 +1,7 @@
 const contactsActions = require("./contacts.js");
 const { Command } = require("commander");
 const program = new Command();
+require("colors");
 
 program
 	.option("-a, --action <type>", "choose action")
@@ -14,31 +15,35 @@ program.parse(process.argv);
 const argv = program.opts();
 
 // TODO: refaktor
-async function invokeAction({ action, id, name, email, phone }) {
+const invokeAction = async ({ action, id, name, email, phone }) => {
 	switch (action) {
 		case "list":
 			const contacts = await contactsActions.listContacts();
+			console.log("Your contacts list:".green);
 			console.table(contacts);
 			break;
 
 		case "get":
 			const contact = await contactsActions.getContactById(id);
+			console.log(`Contact with ID ${id}:`.green);
 			console.table(contact);
 			break;
 
 		case "add":
 			const newContact = await contactsActions.addContact(name, email, phone);
-			console.table(newContact)
+			console.log("New contact has been added:".green);
+			console.table(newContact);
 			break;
 
 		case "remove":
-			const deleteContact = await contactsActions.removeContact(id);
-			console.table(deleteContact)
+			const removeContact = await contactsActions.removeContact(id);
+			console.log(`Contact with ID ${id} has been deleted:`.red);
+			console.table(removeContact);
 			break;
 
 		default:
-		// console.warn("\x1B[31m Unknown action type!");
+			console.warn("\x1B[31m Unknown action type!");
 	}
-}
+};
 
 invokeAction(argv);
