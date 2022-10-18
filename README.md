@@ -24,4 +24,4 @@ Screenshots with actions:
 - [remove](https://monosnap.com/file/6n0428iU4Yv4BNpsw6XHMkg3SQoo9J) 
 
 
-![alt text](/screenshots/--action add.png)
+![alt text](../screenshots/--action add.png)
