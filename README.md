@@ -25,3 +25,4 @@ Screenshots with actions:
 
 
 ![alt text](../screenshots/--action add.png)
+![Alt text](/relative/screenshots/--action add.png)
