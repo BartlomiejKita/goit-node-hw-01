@@ -3,7 +3,7 @@
 
 ## General info
 
-:boom: Backend to store contacts.
+:boom: CLI application to store contacts.
 
 
 ## Technologies
@@ -15,7 +15,7 @@
 
  
 ### Criteria
-[criteria](https://github.com/goitacademy/nodejs-homework/blob/master/homework-01/README.pl.md )
+[criteria](https://github.com/goitacademy/nodejs-homework/blob/master/homework-01/README.en.md )
 
 Screenshots with actions:
  ![list](/screenshots/--action_list.png "List")
